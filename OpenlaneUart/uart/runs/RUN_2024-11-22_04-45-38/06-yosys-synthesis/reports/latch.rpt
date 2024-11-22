@@ -1,0 +1,5 @@
+
+17. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\rx.\next' from process `\rx.$proc$/foss/designs/uart/src/rx.v:59$10'.
+No latch inferred for signal `\tx.\next' from process `\tx.$proc$/foss/designs/uart/src/tx.v:40$5'.
+No latch inferred for signal `\bitrate.\counter_final' from process `\bitrate.$proc$/foss/designs/uart/src/bitrate.v:46$16'.

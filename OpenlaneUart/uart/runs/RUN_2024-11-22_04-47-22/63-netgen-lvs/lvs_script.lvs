@@ -1,0 +1,11 @@
+puts "Reading SPICE netlist file '/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__decap_12.spice'..."
+readnet spice /foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__decap_12.spice 1
+puts "Reading SPICE netlist file '/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__fill_12.spice'..."
+readnet spice /foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__fill_12.spice 1
+puts "Reading SPICE netlist file '/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__fill_4.spice'..."
+readnet spice /foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__fill_4.spice 1
+puts "Reading SPICE netlist file '/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__fill_8.spice'..."
+readnet spice /foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_ef_sc_hd__fill_8.spice 1
+puts "Reading SPICE netlist file '/foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice'..."
+readnet spice /foss/pdks/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice 1
+lvs { /foss/designs/uart/runs/RUN_2024-11-22_04-47-22/61-magic-spiceextraction/uart.spice uart } { /foss/designs/uart/runs/RUN_2024-11-22_04-47-22/48-openroad-fillinsertion/uart.pnl.v uart } /usr/local/lib/python3.10/dist-packages/openlane/scripts/netgen/setup.tcl /foss/designs/uart/runs/RUN_2024-11-22_04-47-22/63-netgen-lvs/reports/lvs.netgen.rpt -json

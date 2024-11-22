@@ -1,0 +1,24 @@
+[WARNING ORD-0039] .openroad ignored with -python
+[WARNING] clk not found in design but found in config.
+Top-level design name: uart
+Block boundaries: 0 0 85835 96555
+Horizontal Tracks Origin: 340, Count: 142, Step: 680
+Vertical Tracks Origin: 230, Count: 186, Step: 460
+Placement details for the E side
+Virtual pin count:  0
+Actual pin count:  15
+Total pin count:  15
+Tracks count:  71
+Tracks per pin:  4
+Used tracks count:  57
+Unused track count:  14
+Starting track index:  7
+Placement details for the W side
+Virtual pin count:  0
+Actual pin count:  19
+Total pin count:  19
+Tracks count:  71
+Tracks per pin:  3
+Used tracks count:  55
+Unused track count:  16
+Starting track index:  8

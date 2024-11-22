@@ -1,0 +1,36 @@
+DATA_OUT_Rx[8] not found in config but found in design.
+DATA_OUT_Rx[7] not found in config but found in design.
+DATA_IN_Tx[1] not found in config but found in design.
+DATA_OUT_Rx[9] not found in config but found in design.
+bitrate[1] not found in config but found in design.
+bitrate[0] not found in config but found in design.
+DATA_OUT_Rx[6] not found in config but found in design.
+DATA_OUT_Rx[1] not found in config but found in design.
+DATA_IN_Tx[5] not found in config but found in design.
+bitrate[2] not found in config but found in design.
+DATA_OUT_Rx[2] not found in config but found in design.
+DATA_IN_Tx[4] not found in config but found in design.
+DATA_IN_Tx[6] not found in config but found in design.
+bitrate[3] not found in config but found in design.
+DATA_IN_Tx[0] not found in config but found in design.
+DATA_OUT_Rx[4] not found in config but found in design.
+DATA_OUT_Rx[0] not found in config but found in design.
+DATA_OUT_Rx[5] not found in config but found in design.
+DATA_IN_Tx[2] not found in config but found in design.
+DATA_IN_Tx[3] not found in config but found in design.
+DATA_IN_Tx[7] not found in config but found in design.
+DATA_OUT_Rx[3] not found in config but found in design.
+Subprocess had a non-zero exit.
+Last 10 line(s):
+[ERROR] DATA_IN_Tx[0] not found in config but found in design.
+[ERROR] DATA_OUT_Rx[4] not found in config but found in design.
+[ERROR] DATA_OUT_Rx[0] not found in config but found in design.
+[ERROR] DATA_OUT_Rx[5] not found in config but found in design.
+[ERROR] DATA_IN_Tx[2] not found in config but found in design.
+[ERROR] DATA_IN_Tx[3] not found in config but found in design.
+[ERROR] DATA_IN_Tx[7] not found in config but found in design.
+[ERROR] DATA_OUT_Rx[3] not found in config but found in design.
+Top-level design name: uart
+Critical mismatches found.
+
+Full log file: 'runs/RUN_2024-11-22_04-19-23/23-odb-customioplacement/odb-customioplacement.log'

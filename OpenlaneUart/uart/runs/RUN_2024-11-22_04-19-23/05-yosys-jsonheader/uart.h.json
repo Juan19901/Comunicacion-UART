@@ -1,0 +1,4078 @@
+{
+  "creator": "Yosys 0.43 (git sha1 ead4718e5, g++ 11.4.0-1ubuntu1~22.04 -fPIC -Os)",
+  "modules": {
+    "uart": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "/foss/designs/uart/src/uart.v:21.1-72.10"
+      },
+      "ports": {
+        "RST": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "EN": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "clk_CPU": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "UART_WRITE": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "UART_BITS": {
+          "direction": "input",
+          "bits": [ 6 ]
+        },
+        "UART_PARITY": {
+          "direction": "input",
+          "bits": [ 7 ]
+        },
+        "DATA_IN_Rx": {
+          "direction": "input",
+          "bits": [ 8 ]
+        },
+        "DATA_IN_Tx": {
+          "direction": "input",
+          "bits": [ 9, 10, 11, 12, 13, 14, 15, 16 ]
+        },
+        "bitrate": {
+          "direction": "input",
+          "bits": [ 17, 18, 19, 20 ]
+        },
+        "uart_clock": {
+          "direction": "output",
+          "bits": [ 21 ]
+        },
+        "UART_AVAIL": {
+          "direction": "output",
+          "bits": [ 22 ]
+        },
+        "IRQ_Rx": {
+          "direction": "output",
+          "bits": [ 23 ]
+        },
+        "DATA_OUT_Tx": {
+          "direction": "output",
+          "bits": [ 24 ]
+        },
+        "IRQ_Tx": {
+          "direction": "output",
+          "bits": [ 25 ]
+        },
+        "DATA_OUT_Rx": {
+          "direction": "output",
+          "bits": [ 26, 27, 28, 29, 30, 31, 32, 33, 34, 35 ]
+        }
+      },
+      "cells": {
+        "$flatten\\uart1.$add$/foss/designs/uart/src/bitrate.v:77$21": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000001010"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/bitrate.v:77.24-77.38"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 36, 37, 38, 39, 40, 41, 42, 43, 44, 45 ],
+            "B": [ "1" ],
+            "Y": [ 46, 47, 48, 49, 50, 51, 52, 53, 54, 55 ]
+          }
+        },
+        "$flatten\\uart1.$auto$mem.cc:282:emit$24": {
+          "hide_name": 1,
+          "type": "$memrd_v2",
+          "parameters": {
+            "ABITS": "00000000000000000000000000000100",
+            "ARST_VALUE": "xxxxxxxxxx",
+            "CE_OVER_SRST": "00000000000000000000000000000000",
+            "CLK_ENABLE": "00000000000000000000000000000000",
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "COLLISION_X_MASK": "",
+            "INIT_VALUE": "xxxxxxxxxx",
+            "MEMID": "$flatten\\uart1.$auto$proc_rom.cc:155:do_switch$23",
+            "SRST_VALUE": "xxxxxxxxxx",
+            "TRANSPARENCY_MASK": "",
+            "WIDTH": "00000000000000000000000000001010"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "ADDR": "input",
+            "ARST": "input",
+            "CLK": "input",
+            "DATA": "output",
+            "EN": "input",
+            "SRST": "input"
+          },
+          "connections": {
+            "ADDR": [ 17, 18, 19, 20 ],
+            "ARST": [ "0" ],
+            "CLK": [ "x" ],
+            "DATA": [ 56, 57, 58, 59, 60, 61, 62, 63, 64, 65 ],
+            "EN": [ "1" ],
+            "SRST": [ "0" ]
+          }
+        },
+        "$flatten\\uart1.$auto$mem.cc:328:emit$25": {
+          "hide_name": 1,
+          "type": "$meminit",
+          "parameters": {
+            "ABITS": "00000000000000000000000000100000",
+            "MEMID": "$flatten\\uart1.$auto$proc_rom.cc:155:do_switch$23",
+            "PRIORITY": "00000000000000000000000000000000",
+            "WIDTH": "00000000000000000000000000001010",
+            "WORDS": "00000000000000000000000000010000"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "ADDR": "input",
+            "DATA": "input"
+          },
+          "connections": {
+            "ADDR": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "DATA": [ "0", "0", "1", "0", "0", "1", "1", "0", "0", "0", "0", "1", "1", "0", "1", "0", "0", "1", "0", "0", "0", "0", "1", "0", "1", "0", "0", "0", "0", "0", "0", "1", "0", "1", "1", "1", "1", "1", "0", "0", "0", "0", "1", "1", "0", "1", "0", "0", "1", "0", "0", "1", "1", "1", "1", "0", "1", "0", "1", "0", "0", "0", "0", "0", "1", "0", "0", "1", "1", "0", "0", "1", "0", "0", "0", "0", "1", "1", "1", "0", "0", "0", "1", "0", "1", "1", "1", "1", "1", "0", "0", "1", "1", "0", "0", "1", "0", "0", "0", "1", "0", "0", "0", "1", "1", "0", "1", "0", "0", "1", "0", "0", "0", "0", "1", "0", "0", "1", "1", "0", "0", "0", "0", "0", "1", "0", "0", "1", "1", "0", "0", "0", "0", "0", "1", "0", "0", "1", "1", "0", "0", "0", "0", "0", "1", "0", "0", "1", "1", "0", "0", "0", "0", "0", "1", "0", "0", "1", "1", "0" ]
+          }
+        },
+        "$flatten\\uart1.$eq$/foss/designs/uart/src/bitrate.v:73$19": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000001010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/bitrate.v:73.13-73.37"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 36, 37, 38, 39, 40, 41, 42, 43, 44, 45 ],
+            "B": [ 56, 57, 58, 59, 60, 61, 62, 63, 64, 65 ],
+            "Y": [ 66 ]
+          }
+        },
+        "$flatten\\uart1.$not$/foss/designs/uart/src/bitrate.v:74$20": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/bitrate.v:74.27-74.38"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 21 ],
+            "Y": [ 67 ]
+          }
+        },
+        "$flatten\\uart1.$procdff$270": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "0",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/bitrate.v:68.1-80.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 68 ],
+            "CLK": [ 4 ],
+            "D": [ 69 ],
+            "Q": [ 21 ]
+          }
+        },
+        "$flatten\\uart1.$procdff$271": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "0",
+            "ARST_VALUE": "0000000000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000001010"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/bitrate.v:68.1-80.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 68 ],
+            "CLK": [ 4 ],
+            "D": [ 70, 71, 72, 73, 74, 75, 76, 77, 78, 79 ],
+            "Q": [ 36, 37, 38, 39, 40, 41, 42, 43, 44, 45 ]
+          }
+        },
+        "$flatten\\uart1.$procmux$250": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001010"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/bitrate.v:73.13-73.37|/foss/designs/uart/src/bitrate.v:73.9-78.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 46, 47, 48, 49, 50, 51, 52, 53, 54, 55 ],
+            "B": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "S": [ 66 ],
+            "Y": [ 80, 81, 82, 83, 84, 85, 86, 87, 88, 89 ]
+          }
+        },
+        "$flatten\\uart1.$procmux$252": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001010"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/bitrate.v:72.18-72.20|/foss/designs/uart/src/bitrate.v:72.14-79.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 36, 37, 38, 39, 40, 41, 42, 43, 44, 45 ],
+            "B": [ 80, 81, 82, 83, 84, 85, 86, 87, 88, 89 ],
+            "S": [ 3 ],
+            "Y": [ 70, 71, 72, 73, 74, 75, 76, 77, 78, 79 ]
+          }
+        },
+        "$flatten\\uart1.$procmux$255": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/bitrate.v:73.13-73.37|/foss/designs/uart/src/bitrate.v:73.9-78.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 21 ],
+            "B": [ 67 ],
+            "S": [ 66 ],
+            "Y": [ 90 ]
+          }
+        },
+        "$flatten\\uart1.$procmux$257": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/bitrate.v:72.18-72.20|/foss/designs/uart/src/bitrate.v:72.14-79.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 21 ],
+            "B": [ 90 ],
+            "S": [ 3 ],
+            "Y": [ 69 ]
+          }
+        },
+        "$flatten\\uart2.$procdff$267": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "0",
+            "ARST_VALUE": "1",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:60.1-83.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 2 ],
+            "CLK": [ 21 ],
+            "D": [ 91 ],
+            "Q": [ 24 ]
+          }
+        },
+        "$flatten\\uart2.$procdff$268": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "0",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:60.1-83.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 2 ],
+            "CLK": [ 21 ],
+            "D": [ 92 ],
+            "Q": [ 25 ]
+          }
+        },
+        "$flatten\\uart2.$procdff$269": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "0",
+            "ARST_VALUE": "0000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:33.1-38.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 2 ],
+            "CLK": [ 21 ],
+            "D": [ 93, 94, 95, 96 ],
+            "Q": [ 97, 98, 99, 100 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$175": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:65.9-81.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 25 ],
+            "B": [ "1" ],
+            "S": [ 101 ],
+            "Y": [ 92 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$176_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:65.9-81.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "1", "1", "0", "1" ],
+            "Y": [ 101 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$177": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000001011",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:65.9-81.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 24 ],
+            "B": [ "1", "1", 16, 15, 14, 13, 12, 11, 10, 9, "0" ],
+            "S": [ 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112 ],
+            "Y": [ 91 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$178_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:65.9-81.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "1", "1", "0", "1" ],
+            "Y": [ 102 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$179_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:65.9-81.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "0", "1", "0", "1" ],
+            "Y": [ 103 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$180_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:65.9-81.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 104 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$181_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:65.9-81.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "0", "0", "0", "1" ],
+            "Y": [ 105 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$182_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:65.9-81.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "1", "1", "1", "0" ],
+            "Y": [ 106 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$183_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:65.9-81.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "0", "1", "1", "0" ],
+            "Y": [ 107 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$184_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:65.9-81.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "1", "0", "1", "0" ],
+            "Y": [ 108 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$185_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:65.9-81.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "0", "0", "1", "0" ],
+            "Y": [ 109 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$186_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:65.9-81.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "1", "1", "0", "0" ],
+            "Y": [ 110 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$187_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:65.9-81.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "0", "1", "0", "0" ],
+            "Y": [ 111 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$188_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:65.9-81.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 112 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$193": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:54.22-54.33|/foss/designs/uart/src/tx.v:54.18-54.67"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1", "1", "0", "1" ],
+            "B": [ "0", "1", "0", "1" ],
+            "S": [ 7 ],
+            "Y": [ 113, 114, 115, 116 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$195": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:42.5-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x", "x" ],
+            "B": [ 113, 114, 115, 116 ],
+            "S": [ 117 ],
+            "Y": [ 118, 119, 120, 121 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$196_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:42.5-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 117 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$202": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:52.27-52.38|/foss/designs/uart/src/tx.v:52.23-53.35"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1", "1", "0", "1" ],
+            "B": [ "0", "1", "0", "1" ],
+            "S": [ 7 ],
+            "Y": [ 122, 123, 124, 125 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$205": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:51.22-51.31|/foss/designs/uart/src/tx.v:51.18-53.35"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 122, 123, 124, 125 ],
+            "B": [ "x", "x", "x", "x" ],
+            "S": [ 6 ],
+            "Y": [ 126, 127, 128, 129 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$207": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:42.5-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x", "x" ],
+            "B": [ 126, 127, 128, 129 ],
+            "S": [ 130 ],
+            "Y": [ 131, 132, 133, 134 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$208_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:42.5-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "0", "0", "0", "1" ],
+            "Y": [ 130 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$214": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:51.22-51.31|/foss/designs/uart/src/tx.v:51.18-53.35"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 131, 132, 133, 134 ],
+            "B": [ "1", "0", "0", "1" ],
+            "S": [ 6 ],
+            "Y": [ 135, 136, 137, 138 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$216": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:42.5-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x", "x" ],
+            "B": [ 135, 136, 137, 138 ],
+            "S": [ 139 ],
+            "Y": [ 140, 141, 142, 143 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$217_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:42.5-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "0", "0", "0", "1" ],
+            "Y": [ 139 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$231": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:43.22-43.32|/foss/designs/uart/src/tx.v:43.18-43.65"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0" ],
+            "B": [ "1", "0", "0", "0" ],
+            "S": [ 5 ],
+            "Y": [ 144, 145, 146, 147 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$233": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:42.5-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x", "x" ],
+            "B": [ 144, 145, 146, 147 ],
+            "S": [ 148 ],
+            "Y": [ 149, 150, 151, 152 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$234_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:42.5-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "Y": [ 148 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$236": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000001100",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:42.5-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x", "x" ],
+            "B": [ "0", "0", "0", "0", "1", "1", "0", "1", 118, 119, 120, 121, 140, 141, 142, 143, "0", "0", "0", "1", "1", "1", "1", "0", "0", "1", "1", "0", "1", "0", "1", "0", "0", "0", "1", "0", "1", "1", "0", "0", "0", "1", "0", "0", 149, 150, 151, 152 ],
+            "S": [ 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164 ],
+            "Y": [ 93, 94, 95, 96 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$237_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:42.5-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "1", "1", "0", "1" ],
+            "Y": [ 153 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$238_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:42.5-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "0", "1", "0", "1" ],
+            "Y": [ 154 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$239_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:42.5-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 155 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$240_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:42.5-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "0", "0", "0", "1" ],
+            "Y": [ 156 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$241_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:42.5-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "1", "1", "1", "0" ],
+            "Y": [ 157 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$242_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:42.5-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "0", "1", "1", "0" ],
+            "Y": [ 158 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$243_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:42.5-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "1", "0", "1", "0" ],
+            "Y": [ 159 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$244_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:42.5-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "0", "0", "1", "0" ],
+            "Y": [ 160 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$245_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:42.5-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "1", "1", "0", "0" ],
+            "Y": [ 161 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$246_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:42.5-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "0", "1", "0", "0" ],
+            "Y": [ 162 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$247_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:42.5-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 163 ]
+          }
+        },
+        "$flatten\\uart2.$procmux$248_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/tx.v:0.0-0.0|/foss/designs/uart/src/tx.v:42.5-57.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "Y": [ 164 ]
+          }
+        },
+        "$flatten\\uart3.$auto$proc_dff.cc:309:proc_dff$263": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 165 ],
+            "B": [ "1" ],
+            "S": [ 2 ],
+            "Y": [ 166 ]
+          }
+        },
+        "$flatten\\uart3.$procdff$260": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "0",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:83.1-115.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 2 ],
+            "CLK": [ 4 ],
+            "D": [ 167 ],
+            "Q": [ 22 ]
+          }
+        },
+        "$flatten\\uart3.$procdff$261": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "0",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:83.1-115.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 2 ],
+            "CLK": [ 4 ],
+            "D": [ 168 ],
+            "Q": [ 23 ]
+          }
+        },
+        "$flatten\\uart3.$procdff$262": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "0",
+            "ARST_VALUE": "0000000001",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000001010"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:83.1-115.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 2 ],
+            "CLK": [ 4 ],
+            "D": [ 169, 170, 171, 172, 173, 174, 175, 176, 177, 178 ],
+            "Q": [ 26, 27, 28, 29, 30, 31, 32, 33, 34, 35 ]
+          }
+        },
+        "$flatten\\uart3.$procdff$265": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:83.1-115.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 4 ],
+            "D": [ 166 ],
+            "Q": [ 165 ]
+          }
+        },
+        "$flatten\\uart3.$procdff$266": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "0",
+            "ARST_VALUE": "0000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:52.1-57.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 2 ],
+            "CLK": [ 21 ],
+            "D": [ 179, 180, 181, 182 ],
+            "Q": [ 183, 184, 185, 186 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$100": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:77.22-77.32|/foss/designs/uart/src/rx.v:77.18-77.66"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1", "1", "0", "1" ],
+            "B": [ "0", "1", "0", "1" ],
+            "S": [ 8 ],
+            "Y": [ 187, 188, 189, 190 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$102": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x", "x" ],
+            "B": [ 187, 188, 189, 190 ],
+            "S": [ 191 ],
+            "Y": [ 192, 193, 194, 195 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$103_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 191 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$109": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:74.27-74.37|/foss/designs/uart/src/rx.v:74.23-75.35"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1", "1", "0", "1" ],
+            "B": [ "0", "1", "0", "1" ],
+            "S": [ 8 ],
+            "Y": [ 196, 197, 198, 199 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$112": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:73.22-73.32|/foss/designs/uart/src/rx.v:73.18-75.35"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 196, 197, 198, 199 ],
+            "B": [ "x", "x", "x", "x" ],
+            "S": [ 8 ],
+            "Y": [ 200, 201, 202, 203 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$114": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x", "x" ],
+            "B": [ 200, 201, 202, 203 ],
+            "S": [ 204 ],
+            "Y": [ 205, 206, 207, 208 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$115_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "0", "0", "0", "1" ],
+            "Y": [ 204 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$121": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:73.22-73.32|/foss/designs/uart/src/rx.v:73.18-75.35"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 205, 206, 207, 208 ],
+            "B": [ "1", "0", "0", "1" ],
+            "S": [ 8 ],
+            "Y": [ 209, 210, 211, 212 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$123": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x", "x" ],
+            "B": [ 209, 210, 211, 212 ],
+            "S": [ 213 ],
+            "Y": [ 214, 215, 216, 217 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$124_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "0", "0", "0", "1" ],
+            "Y": [ 213 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$138": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:63.21-63.32|/foss/designs/uart/src/rx.v:63.17-63.72"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "1", "1" ],
+            "B": [ "1", "0", "0", "0" ],
+            "S": [ 8 ],
+            "Y": [ 218, 219, 220, 221 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$140": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x", "x" ],
+            "B": [ 218, 219, 220, 221 ],
+            "S": [ 222 ],
+            "Y": [ 223, 224, 225, 226 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$141_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 222 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$156": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:62.22-62.33|/foss/designs/uart/src/rx.v:62.18-62.66"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1", "0", "0", "0" ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 8 ],
+            "Y": [ 227, 228, 229, 230 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$158": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x", "x" ],
+            "B": [ 227, 228, 229, 230 ],
+            "S": [ 231 ],
+            "Y": [ 232, 233, 234, 235 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$159_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "Y": [ 231 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$161": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000001101",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x", "x" ],
+            "B": [ "0", "0", "0", "0", "1", "1", "0", "1", 192, 193, 194, 195, 214, 215, 216, 217, "0", "0", "0", "1", "1", "1", "1", "0", "0", "1", "1", "0", "1", "0", "1", "0", "0", "0", "1", "0", "1", "1", "0", "0", "0", "1", "0", "0", 223, 224, 225, 226, 232, 233, 234, 235 ],
+            "S": [ 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248 ],
+            "Y": [ 179, 180, 181, 182 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$162_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "1", "0", "1" ],
+            "Y": [ 236 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$163_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "0", "1", "0", "1" ],
+            "Y": [ 237 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$164_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 238 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$165_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "0", "0", "0", "1" ],
+            "Y": [ 239 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$166_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "1", "1", "0" ],
+            "Y": [ 240 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$167_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "0", "1", "1", "0" ],
+            "Y": [ 241 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$168_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "0", "1", "0" ],
+            "Y": [ 242 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$169_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "0", "0", "1", "0" ],
+            "Y": [ 243 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$170_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "1", "0", "0" ],
+            "Y": [ 244 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$171_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "0", "1", "0", "0" ],
+            "Y": [ 245 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$172_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "0", "0", "1", "1" ],
+            "Y": [ 246 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$173_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 247 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$174_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:61.5-80.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "Y": [ 248 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$26": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000010",
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 34, 35 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 249, 250 ],
+            "Y": [ 177, 178 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$27_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "1", "0", "1" ],
+            "Y": [ 249 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$30_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "0", "1", "0", "1" ],
+            "Y": [ 250 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$31": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000011",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 30 ],
+            "B": [ "0", "0", 8 ],
+            "S": [ 251, 252, 253 ],
+            "Y": [ 173 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$32_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "1", "0", "1" ],
+            "Y": [ 251 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$35_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "0", "1", "0", "1" ],
+            "Y": [ 252 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$36_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "0", "1", "1", "0" ],
+            "Y": [ 253 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$37": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000011",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 29 ],
+            "B": [ "0", "0", 8 ],
+            "S": [ 254, 255, 256 ],
+            "Y": [ 172 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$38_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "1", "0", "1" ],
+            "Y": [ 254 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$41_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "0", "1", "0", "1" ],
+            "Y": [ 255 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$42_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "0", "1", "0" ],
+            "Y": [ 256 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$43": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000011",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 28 ],
+            "B": [ "0", "0", 8 ],
+            "S": [ 257, 258, 259 ],
+            "Y": [ 171 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$44_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "1", "0", "1" ],
+            "Y": [ 257 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$47_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "0", "1", "0", "1" ],
+            "Y": [ 258 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$48_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "0", "0", "1", "0" ],
+            "Y": [ 259 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$49": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000011",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 27 ],
+            "B": [ "0", "0", 8 ],
+            "S": [ 260, 261, 262 ],
+            "Y": [ 170 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$50_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "1", "0", "1" ],
+            "Y": [ 260 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$53_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "0", "1", "0", "1" ],
+            "Y": [ 261 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$54_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "1", "0", "0" ],
+            "Y": [ 262 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$55": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000011",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 26 ],
+            "B": [ "1", 263, 8 ],
+            "S": [ 264, 265, 266 ],
+            "Y": [ 169 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$56_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "1", "0", "1" ],
+            "Y": [ 264 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$58": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/rx.v:105.24-105.42|/foss/designs/uart/src/rx.v:105.21-106.46"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ "1" ],
+            "S": [ 8 ],
+            "Y": [ 263 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$60_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "0", "1", "0", "1" ],
+            "Y": [ 265 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$61_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "0", "1", "0", "0" ],
+            "Y": [ 266 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$62": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000011",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 33 ],
+            "B": [ "0", "0", 8 ],
+            "S": [ 267, 268, 269 ],
+            "Y": [ 176 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$63_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "1", "0", "1" ],
+            "Y": [ 267 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$66_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "0", "1", "0", "1" ],
+            "Y": [ 268 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$67_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 269 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$68": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000011",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 32 ],
+            "B": [ "0", "0", 8 ],
+            "S": [ 270, 271, 272 ],
+            "Y": [ 175 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$69_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "1", "0", "1" ],
+            "Y": [ 270 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$72_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "0", "1", "0", "1" ],
+            "Y": [ 271 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$73_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "0", "0", "0", "1" ],
+            "Y": [ 272 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$74": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000011",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 31 ],
+            "B": [ "0", "0", 8 ],
+            "S": [ 273, 274, 275 ],
+            "Y": [ 174 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$75_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "1", "0", "1" ],
+            "Y": [ 273 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$78_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "0", "1", "0", "1" ],
+            "Y": [ 274 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$79_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "1", "1", "0" ],
+            "Y": [ 275 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$92": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 23 ],
+            "B": [ "1" ],
+            "S": [ 276 ],
+            "Y": [ 168 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$93_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "1", "0", "1" ],
+            "Y": [ 276 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$94": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 22 ],
+            "B": [ "1" ],
+            "S": [ 277 ],
+            "Y": [ 167 ]
+          }
+        },
+        "$flatten\\uart3.$procmux$95_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:0.0-0.0|/foss/designs/uart/src/rx.v:92.9-113.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 183, 184, 185, 186 ],
+            "B": [ "1", "1", "0", "1" ],
+            "Y": [ 277 ]
+          }
+        },
+        "$logic_and$/foss/designs/uart/src/uart.v:34$1": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/uart.v:34.19-34.42"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "B": [ 165 ],
+            "Y": [ 278 ]
+          }
+        },
+        "$ternary$/foss/designs/uart/src/uart.v:34$2": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/foss/designs/uart/src/uart.v:34.18-34.57"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ "1" ],
+            "S": [ 278 ],
+            "Y": [ 68 ]
+          }
+        }
+      },
+      "memories": {
+        "$flatten\\uart1.$auto$proc_rom.cc:155:do_switch$23": {
+          "hide_name": 1,
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/foss/designs/uart/src/bitrate.v:48.5-64.12"
+          },
+          "width": 10,
+          "start_offset": 0,
+          "size": 16
+        }
+      },
+      "netnames": {
+        "$flatten\\uart1.$0\\counter[9:0]": {
+          "hide_name": 1,
+          "bits": [ 70, 71, 72, 73, 74, 75, 76, 77, 78, 79 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/bitrate.v:68.1-80.4"
+          }
+        },
+        "$flatten\\uart1.$0\\uart_clock[0:0]": {
+          "hide_name": 1,
+          "bits": [ 69 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/bitrate.v:68.1-80.4"
+          }
+        },
+        "$flatten\\uart1.$add$/foss/designs/uart/src/bitrate.v:77$21_Y": {
+          "hide_name": 1,
+          "bits": [ 46, 47, 48, 49, 50, 51, 52, 53, 54, 55 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/bitrate.v:77.24-77.38"
+          }
+        },
+        "$flatten\\uart1.$eq$/foss/designs/uart/src/bitrate.v:73$19_Y": {
+          "hide_name": 1,
+          "bits": [ 66 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/bitrate.v:73.13-73.37"
+          }
+        },
+        "$flatten\\uart1.$not$/foss/designs/uart/src/bitrate.v:74$20_Y": {
+          "hide_name": 1,
+          "bits": [ 67 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/bitrate.v:74.27-74.38"
+          }
+        },
+        "$flatten\\uart1.$procmux$250_Y": {
+          "hide_name": 1,
+          "bits": [ 80, 81, 82, 83, 84, 85, 86, 87, 88, 89 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart1.$procmux$255_Y": {
+          "hide_name": 1,
+          "bits": [ 90 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$0\\DATA_OUT_Tx[0:0]": {
+          "hide_name": 1,
+          "bits": [ 91 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:60.1-83.4"
+          }
+        },
+        "$flatten\\uart2.$0\\IRQ_Tx[0:0]": {
+          "hide_name": 1,
+          "bits": [ 92 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:60.1-83.4"
+          }
+        },
+        "$flatten\\uart2.$2\\next[3:0]": {
+          "hide_name": 1,
+          "bits": [ 149, 150, 151, 152 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:40.1-58.4"
+          }
+        },
+        "$flatten\\uart2.$3\\next[3:0]": {
+          "hide_name": 1,
+          "bits": [ 140, 141, 142, 143 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:40.1-58.4"
+          }
+        },
+        "$flatten\\uart2.$4\\next[3:0]": {
+          "hide_name": 1,
+          "bits": [ 131, 132, 133, 134 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:40.1-58.4"
+          }
+        },
+        "$flatten\\uart2.$5\\next[3:0]": {
+          "hide_name": 1,
+          "bits": [ 118, 119, 120, 121 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/tx.v:40.1-58.4"
+          }
+        },
+        "$flatten\\uart2.$procmux$176_CMP": {
+          "hide_name": 1,
+          "bits": [ 101 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$178_CMP": {
+          "hide_name": 1,
+          "bits": [ 102 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$179_CMP": {
+          "hide_name": 1,
+          "bits": [ 103 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$180_CMP": {
+          "hide_name": 1,
+          "bits": [ 104 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$181_CMP": {
+          "hide_name": 1,
+          "bits": [ 105 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$182_CMP": {
+          "hide_name": 1,
+          "bits": [ 106 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$183_CMP": {
+          "hide_name": 1,
+          "bits": [ 107 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$184_CMP": {
+          "hide_name": 1,
+          "bits": [ 108 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$185_CMP": {
+          "hide_name": 1,
+          "bits": [ 109 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$186_CMP": {
+          "hide_name": 1,
+          "bits": [ 110 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$187_CMP": {
+          "hide_name": 1,
+          "bits": [ 111 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$188_CMP": {
+          "hide_name": 1,
+          "bits": [ 112 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$193_Y": {
+          "hide_name": 1,
+          "bits": [ 113, 114, 115, 116 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$196_CMP": {
+          "hide_name": 1,
+          "bits": [ 117 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$202_Y": {
+          "hide_name": 1,
+          "bits": [ 122, 123, 124, 125 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$205_Y": {
+          "hide_name": 1,
+          "bits": [ 126, 127, 128, 129 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$208_CMP": {
+          "hide_name": 1,
+          "bits": [ 130 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$214_Y": {
+          "hide_name": 1,
+          "bits": [ 135, 136, 137, 138 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$217_CMP": {
+          "hide_name": 1,
+          "bits": [ 139 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$231_Y": {
+          "hide_name": 1,
+          "bits": [ 144, 145, 146, 147 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$234_CMP": {
+          "hide_name": 1,
+          "bits": [ 148 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$237_CMP": {
+          "hide_name": 1,
+          "bits": [ 153 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$238_CMP": {
+          "hide_name": 1,
+          "bits": [ 154 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$239_CMP": {
+          "hide_name": 1,
+          "bits": [ 155 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$240_CMP": {
+          "hide_name": 1,
+          "bits": [ 156 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$241_CMP": {
+          "hide_name": 1,
+          "bits": [ 157 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$242_CMP": {
+          "hide_name": 1,
+          "bits": [ 158 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$243_CMP": {
+          "hide_name": 1,
+          "bits": [ 159 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$244_CMP": {
+          "hide_name": 1,
+          "bits": [ 160 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$245_CMP": {
+          "hide_name": 1,
+          "bits": [ 161 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$246_CMP": {
+          "hide_name": 1,
+          "bits": [ 162 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$247_CMP": {
+          "hide_name": 1,
+          "bits": [ 163 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart2.$procmux$248_CMP": {
+          "hide_name": 1,
+          "bits": [ 164 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$0\\DATA_OUT_Rx[9:0]": {
+          "hide_name": 1,
+          "bits": [ 169, 170, 171, 172, 173, 174, 175, 176, 177, 178 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:83.1-115.4"
+          }
+        },
+        "$flatten\\uart3.$0\\IRQ_Rx[0:0]": {
+          "hide_name": 1,
+          "bits": [ 168 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:83.1-115.4"
+          }
+        },
+        "$flatten\\uart3.$0\\UART_AVAIL[0:0]": {
+          "hide_name": 1,
+          "bits": [ 167 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:83.1-115.4"
+          }
+        },
+        "$flatten\\uart3.$2\\next[3:0]": {
+          "hide_name": 1,
+          "bits": [ 232, 233, 234, 235 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:59.1-81.4"
+          }
+        },
+        "$flatten\\uart3.$3\\next[3:0]": {
+          "hide_name": 1,
+          "bits": [ 223, 224, 225, 226 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:59.1-81.4"
+          }
+        },
+        "$flatten\\uart3.$4\\next[3:0]": {
+          "hide_name": 1,
+          "bits": [ 214, 215, 216, 217 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:59.1-81.4"
+          }
+        },
+        "$flatten\\uart3.$5\\next[3:0]": {
+          "hide_name": 1,
+          "bits": [ 205, 206, 207, 208 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:59.1-81.4"
+          }
+        },
+        "$flatten\\uart3.$6\\next[3:0]": {
+          "hide_name": 1,
+          "bits": [ 192, 193, 194, 195 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/rx.v:59.1-81.4"
+          }
+        },
+        "$flatten\\uart3.$auto$rtlil.cc:2603:Mux$264": {
+          "hide_name": 1,
+          "bits": [ 166 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$100_Y": {
+          "hide_name": 1,
+          "bits": [ 187, 188, 189, 190 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$103_CMP": {
+          "hide_name": 1,
+          "bits": [ 191 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$109_Y": {
+          "hide_name": 1,
+          "bits": [ 196, 197, 198, 199 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$112_Y": {
+          "hide_name": 1,
+          "bits": [ 200, 201, 202, 203 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$115_CMP": {
+          "hide_name": 1,
+          "bits": [ 204 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$121_Y": {
+          "hide_name": 1,
+          "bits": [ 209, 210, 211, 212 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$124_CMP": {
+          "hide_name": 1,
+          "bits": [ 213 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$138_Y": {
+          "hide_name": 1,
+          "bits": [ 218, 219, 220, 221 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$141_CMP": {
+          "hide_name": 1,
+          "bits": [ 222 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$156_Y": {
+          "hide_name": 1,
+          "bits": [ 227, 228, 229, 230 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$159_CMP": {
+          "hide_name": 1,
+          "bits": [ 231 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$162_CMP": {
+          "hide_name": 1,
+          "bits": [ 236 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$163_CMP": {
+          "hide_name": 1,
+          "bits": [ 237 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$164_CMP": {
+          "hide_name": 1,
+          "bits": [ 238 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$165_CMP": {
+          "hide_name": 1,
+          "bits": [ 239 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$166_CMP": {
+          "hide_name": 1,
+          "bits": [ 240 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$167_CMP": {
+          "hide_name": 1,
+          "bits": [ 241 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$168_CMP": {
+          "hide_name": 1,
+          "bits": [ 242 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$169_CMP": {
+          "hide_name": 1,
+          "bits": [ 243 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$170_CMP": {
+          "hide_name": 1,
+          "bits": [ 244 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$171_CMP": {
+          "hide_name": 1,
+          "bits": [ 245 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$172_CMP": {
+          "hide_name": 1,
+          "bits": [ 246 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$173_CMP": {
+          "hide_name": 1,
+          "bits": [ 247 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$174_CMP": {
+          "hide_name": 1,
+          "bits": [ 248 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$27_CMP": {
+          "hide_name": 1,
+          "bits": [ 249 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$30_CMP": {
+          "hide_name": 1,
+          "bits": [ 250 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$32_CMP": {
+          "hide_name": 1,
+          "bits": [ 251 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$35_CMP": {
+          "hide_name": 1,
+          "bits": [ 252 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$36_CMP": {
+          "hide_name": 1,
+          "bits": [ 253 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$38_CMP": {
+          "hide_name": 1,
+          "bits": [ 254 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$41_CMP": {
+          "hide_name": 1,
+          "bits": [ 255 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$42_CMP": {
+          "hide_name": 1,
+          "bits": [ 256 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$44_CMP": {
+          "hide_name": 1,
+          "bits": [ 257 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$47_CMP": {
+          "hide_name": 1,
+          "bits": [ 258 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$48_CMP": {
+          "hide_name": 1,
+          "bits": [ 259 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$50_CMP": {
+          "hide_name": 1,
+          "bits": [ 260 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$53_CMP": {
+          "hide_name": 1,
+          "bits": [ 261 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$54_CMP": {
+          "hide_name": 1,
+          "bits": [ 262 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$56_CMP": {
+          "hide_name": 1,
+          "bits": [ 264 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$58_Y": {
+          "hide_name": 1,
+          "bits": [ 263 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$60_CMP": {
+          "hide_name": 1,
+          "bits": [ 265 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$61_CMP": {
+          "hide_name": 1,
+          "bits": [ 266 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$63_CMP": {
+          "hide_name": 1,
+          "bits": [ 267 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$66_CMP": {
+          "hide_name": 1,
+          "bits": [ 268 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$67_CMP": {
+          "hide_name": 1,
+          "bits": [ 269 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$69_CMP": {
+          "hide_name": 1,
+          "bits": [ 270 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$72_CMP": {
+          "hide_name": 1,
+          "bits": [ 271 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$73_CMP": {
+          "hide_name": 1,
+          "bits": [ 272 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$75_CMP": {
+          "hide_name": 1,
+          "bits": [ 273 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$78_CMP": {
+          "hide_name": 1,
+          "bits": [ 274 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$79_CMP": {
+          "hide_name": 1,
+          "bits": [ 275 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$93_CMP": {
+          "hide_name": 1,
+          "bits": [ 276 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\uart3.$procmux$95_CMP": {
+          "hide_name": 1,
+          "bits": [ 277 ],
+          "attributes": {
+          }
+        },
+        "$logic_and$/foss/designs/uart/src/uart.v:34$1_Y": {
+          "hide_name": 1,
+          "bits": [ 278 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/uart.v:34.19-34.42"
+          }
+        },
+        "DATA_IN_Rx": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/uart.v:23.65-23.75"
+          }
+        },
+        "DATA_IN_Tx": {
+          "hide_name": 0,
+          "bits": [ 9, 10, 11, 12, 13, 14, 15, 16 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/uart.v:24.17-24.27"
+          }
+        },
+        "DATA_OUT_Rx": {
+          "hide_name": 0,
+          "bits": [ 26, 27, 28, 29, 30, 31, 32, 33, 34, 35 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/uart.v:28.18-28.29"
+          }
+        },
+        "DATA_OUT_Tx": {
+          "hide_name": 0,
+          "bits": [ 24 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/uart.v:27.12-27.23"
+          }
+        },
+        "EN": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/uart.v:23.16-23.18"
+          }
+        },
+        "IRQ_Rx": {
+          "hide_name": 0,
+          "bits": [ 23 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/uart.v:26.36-26.42"
+          }
+        },
+        "IRQ_Tx": {
+          "hide_name": 0,
+          "bits": [ 25 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/uart.v:27.25-27.31"
+          }
+        },
+        "RST": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/uart.v:23.11-23.14"
+          }
+        },
+        "UART_AVAIL": {
+          "hide_name": 0,
+          "bits": [ 22 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/uart.v:26.24-26.34"
+          }
+        },
+        "UART_BITS": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/uart.v:23.41-23.50"
+          }
+        },
+        "UART_PARITY": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/uart.v:23.52-23.63"
+          }
+        },
+        "UART_WRITE": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/uart.v:23.29-23.39"
+          }
+        },
+        "bitrate": {
+          "hide_name": 0,
+          "bits": [ 17, 18, 19, 20 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/uart.v:25.16-25.23"
+          }
+        },
+        "clk_CPU": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/uart.v:23.20-23.27"
+          }
+        },
+        "rst_bit": {
+          "hide_name": 0,
+          "bits": [ 68 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/uart.v:31.6-31.13"
+          }
+        },
+        "rst_bitrate_uart": {
+          "hide_name": 0,
+          "bits": [ 165 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/uart.v:32.6-32.22"
+          }
+        },
+        "uart1.counter": {
+          "hide_name": 0,
+          "bits": [ 36, 37, 38, 39, 40, 41, 42, 43, 44, 45 ],
+          "attributes": {
+            "hdlname": "uart1 counter",
+            "src": "/foss/designs/uart/src/bitrate.v:43.11-43.18"
+          }
+        },
+        "uart1.counter_final": {
+          "hide_name": 0,
+          "bits": [ 56, 57, 58, 59, 60, 61, 62, 63, 64, 65 ],
+          "attributes": {
+            "hdlname": "uart1 counter_final",
+            "src": "/foss/designs/uart/src/bitrate.v:42.11-42.24"
+          }
+        },
+        "uart2.next": {
+          "hide_name": 0,
+          "bits": [ 93, 94, 95, 96 ],
+          "attributes": {
+            "hdlname": "uart2 next",
+            "src": "/foss/designs/uart/src/tx.v:28.18-28.22"
+          }
+        },
+        "uart2.state": {
+          "hide_name": 0,
+          "bits": [ 97, 98, 99, 100 ],
+          "attributes": {
+            "hdlname": "uart2 state",
+            "src": "/foss/designs/uart/src/tx.v:28.11-28.16"
+          }
+        },
+        "uart3.next": {
+          "hide_name": 0,
+          "bits": [ 179, 180, 181, 182 ],
+          "attributes": {
+            "hdlname": "uart3 next",
+            "src": "/foss/designs/uart/src/rx.v:49.18-49.22"
+          }
+        },
+        "uart3.state": {
+          "hide_name": 0,
+          "bits": [ 183, 184, 185, 186 ],
+          "attributes": {
+            "hdlname": "uart3 state",
+            "src": "/foss/designs/uart/src/rx.v:49.11-49.16"
+          }
+        },
+        "uart_clock": {
+          "hide_name": 0,
+          "bits": [ 21 ],
+          "attributes": {
+            "src": "/foss/designs/uart/src/uart.v:26.12-26.22"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+ruby /usr/local/lib/python3.10/dist-packages/openlane/scripts/klayout/xor.drc --output /foss/designs/uart/runs/RUN_2024-11-22_04-47-22/55-klayout-xor/xor.xml --top uart --threads 4 --ignore 81/14 /foss/designs/uart/runs/RUN_2024-11-22_04-47-22/52-magic-streamout/uart.magic.gds /foss/designs/uart/runs/RUN_2024-11-22_04-47-22/53-klayout-streamout/uart.klayout.gds

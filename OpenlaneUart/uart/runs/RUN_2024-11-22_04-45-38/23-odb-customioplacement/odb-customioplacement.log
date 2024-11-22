@@ -1,0 +1,6 @@
+[WARNING ORD-0039] .openroad ignored with -python
+[WARNING] clk not found in design but found in config.
+[WARNING] clk_cpu not found in design but found in config.
+[ERROR] clk_CPU not found in config but found in design.
+Top-level design name: uart
+Critical mismatches found.
