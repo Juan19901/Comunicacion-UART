@@ -9,7 +9,7 @@ Tx: Facilita la conversión de datos paralelos en formato serial, asegurando que
 Rx: Desempaqueta datos seriales recibidos, convirtiéndolos en formato paralelo y validando la integridad del mensaje (por ejemplo, usando paridad si está configurada), permitiendo su uso en el sistema receptor.
 
 En conjunto, estos módulos son esenciales para establecer una comunicación eficiente, confiable y configurable entre dispositivos digitales, siendo especialmente útiles en aplicaciones como microcontroladores, sistemas embebidos, sensores y actuadores, entre otros.
-
+![image](https://github.com/user-attachments/assets/efbfd839-630d-4d83-a922-f8c4e55e0304)
 
 Módulo BITRATE
 El módulo BITRATE se encarga de generar una señal de reloj ajustada a diferentes velocidades de transmisión (baudios) para un sistema UART. Permite al usuario seleccionar entre varias configuraciones de velocidad: 300, 600, 1200, 1800, 2400, 4800, 9600, 19200, 38400, 57600 y 115200 baudios.
@@ -19,6 +19,7 @@ El módulo utiliza un reloj de entrada (clk) y, a partir de este, genera una se�
 
 Este diseño asegura una sincronización precisa entre la velocidad de transmisión seleccionada y la señal de salida del módulo, contribuyendo a un funcionamiento confiable del sistema de comunicación UART, en la siguiente imagen se puede observar el comportamiento de las señales a lo largo del tiempo 
 
+![image](https://github.com/user-attachments/assets/457bb159-1ec6-4f0a-9818-0647da308414)
 
 
 Módulo Tx
@@ -33,6 +34,7 @@ Salida serial: Genera la señal de datos seriales (DATA_OUT_Tx) que incluye el f
 Interrupción: Activa la señal de interrupción (IRQ_Tx) al finalizar la transmisión, le indica al procesador que el módulo está listo para un nuevo dato.
 Además, el diseño incluye un registro de datos (myreg) para almacenar los datos de entrada temporalmente y garantizar una transmisión sincronizada con el reloj del sistema (uart_clok). Este módulo es fundamental para la transmisión serial en aplicaciones UART, garantizando flexibilidad y compatibilidad con diferentes configuraciones de comunicación.
 
+![image](https://github.com/user-attachments/assets/47bacd62-b969-4d18-8c0d-155fa76757d0)
 
 
 Se puede observar como el módulo recibe un dato de 8 bits y este lo envía bit a bit en una secuencia(señal morada), la cual está sincronizada por el BITRATE
@@ -53,6 +55,7 @@ Reinicio del generador de baudios: Emite una señal (rst_bitrate) para sincroniz
 Señalización de interrupciones: Activa la señal IRQ_Rx y UART_AVAIL al completar exitosamente la recepción, indicando que los datos están disponibles para su lectura.
 El módulo se sincroniza con el reloj de la CPU (clk) para garantizar una correcta interpretación de la señal serial. Este diseño es fundamental para aplicaciones UART que requieren una recepción confiable y eficiente de datos seriales.
 
+![image](https://github.com/user-attachments/assets/887eaf4d-a83f-4566-b3e5-61f330df1a9c)
 
 
 
@@ -66,5 +69,11 @@ Faltantes: Para completar el módulo UART en sus totalidad faltaria la integraci
 
 Este módulo UART se simuló y se obtuvo la siguiente imagen:
 
+![image](https://github.com/user-attachments/assets/c9773f11-b68d-496e-b999-61fdad004d29)
 
+Se pueden observar las señales más importantes de todo el módulo y como es su comportamiento a lo largo del tiempo, importante destacar en es simulación es que se puede observar como a la misma vez se trasmiten y reciben datos 
+
+A continuación  se observa el layout del módulo UART.
+
+![image](https://github.com/user-attachments/assets/9c9f12d5-6e6e-4616-9e7f-764a28336688)
 
