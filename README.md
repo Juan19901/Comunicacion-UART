@@ -77,3 +77,4 @@ A continuación  se observa el layout del módulo UART.
 
 ![image](https://github.com/user-attachments/assets/9c9f12d5-6e6e-4616-9e7f-764a28336688)
 
+Creado por Tatiana Andrea Acosta perez y Juan David Rojas Echeverri
